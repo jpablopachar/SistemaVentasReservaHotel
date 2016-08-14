@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteHabitaciones" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eed19c9b-73e5-4385-9d2c-a521d1d06789">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     Habitacion.`idHabitacion` AS Habitacion_idHabitacion,
+     Habitacion.`numero` AS Habitacion_numero,
+     Habitacion.`piso` AS Habitacion_piso,
+     Habitacion.`descripcion` AS Habitacion_descripcion,
+     Habitacion.`caracteristicas` AS Habitacion_caracteristicas,
+     Habitacion.`precioDiario` AS Habitacion_precioDiario,
+     Habitacion.`estado` AS Habitacion_estado,
+     Habitacion.`tipoHabitacion` AS Habitacion_tipoHabitacion
+FROM
+     `Habitacion` Habitacion]]>
+	</queryString>
+	<field name="Habitacion_idHabitacion" class="java.lang.Integer"/>
+	<field name="Habitacion_numero" class="java.lang.String"/>
+	<field name="Habitacion_piso" class="java.lang.String"/>
+	<field name="Habitacion_descripcion" class="java.lang.String"/>
+	<field name="Habitacion_caracteristicas" class="java.lang.String"/>
+	<field name="Habitacion_precioDiario" class="java.math.BigDecimal"/>
+	<field name="Habitacion_estado" class="java.lang.String"/>
+	<field name="Habitacion_tipoHabitacion" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="9fe61a21-d1f7-4eb5-89b1-fd611399e2c7"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="f88f2b9d-16fa-4aa1-a187-972e3c06c3d0"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[HOTEL EDEN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="b2497cb3-6fea-47cc-89e0-53f79f8a8813"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Listado de habitaciones]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="f753a52b-9270-429b-9ecd-a511094db67e"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="63" height="20" uuid="28e46398-deab-419a-93cc-1453e9e1b1e8"/>
+				<textElement>
+					<font fontName="Ubuntu" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="2" width="51" height="20" uuid="a86374ed-086b-4d98-9cb1-43d380103308"/>
+				<textElement>
+					<font fontName="Ubuntu" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Piso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="2" width="100" height="20" uuid="f153ee18-16fa-4947-9a78-413e3f68b532"/>
+				<textElement>
+					<font fontName="Ubuntu" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="1" width="100" height="20" uuid="93035d72-463c-42d1-ae47-8299d9c7f63c"/>
+				<textElement>
+					<font fontName="Ubuntu" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Características]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="1" width="100" height="20" uuid="26035345-ad11-4415-9911-96e261759ae3"/>
+				<textElement>
+					<font fontName="Ubuntu" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Diario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29">
+			<textField>
+				<reportElement x="0" y="0" width="63" height="20" uuid="287e278a-81f2-4eac-90a8-893115265a15"/>
+				<textFieldExpression><![CDATA[$F{Habitacion_numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="0" width="51" height="20" uuid="dd223694-39af-4b9b-b4d0-d7179bdec9e7"/>
+				<textFieldExpression><![CDATA[$F{Habitacion_piso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="100" height="20" uuid="e12c8afa-212e-4c1e-b672-a601c39426bd"/>
+				<textFieldExpression><![CDATA[$F{Habitacion_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="0" width="100" height="20" uuid="1864c375-0ffe-47da-a11e-c618f5ffb84c"/>
+				<textFieldExpression><![CDATA[$F{Habitacion_caracteristicas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="0" width="100" height="20" uuid="28e1dd93-4d65-4816-ac9b-a2ed1294c84e"/>
+				<textFieldExpression><![CDATA[$F{Habitacion_precioDiario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="6385e503-2731-428a-8ca9-9ce67331becf"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página"+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="7973c098-9684-4c32-9f92-06796cb67f0f"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="113fd4d9-c140-4f8a-969a-bf3dba401311"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
